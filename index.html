@@ -3,6 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+(function () {
+  var host = location.hostname;
+  var production = host === 'rexstjohn.com' || host.endsWith('.rexstjohn.com');
+  if (!production) return;
+  // Static HTML has no runtime env. NEXT_PUBLIC_GA_MEASUREMENT_ID defaults to the shared rexstjohn.com property.
+  var id = 'G-S4VE871DVG';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', id, { cookie_domain: 'auto' });
+  var loader = document.createElement('script');
+  loader.async = true;
+  loader.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+  document.head.appendChild(loader);
+})();
+</script>
 <title>Nonlinear: Life at the edge of the singularity</title>
 <meta name="description" content="Nonlinear: Life at the edge of the singularity. Where the surreal is the new normal. Made with DirectX.">
 <meta property="og:title" content="Nonlinear: Life at the edge of the singularity">
